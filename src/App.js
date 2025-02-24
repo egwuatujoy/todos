@@ -12,13 +12,14 @@ import todoLists from "./data/TodoData";
 const App = () => {
   const [title, setTitle] = useState("");
   const [open, setOpen] = useState(false);
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
   const [selected, setSelected] = useState(false);
+  const [openLists, setopenLists] = useState(false);
 
   const addnewItems = (newItem) => {
-    setTodo((todo) => [...todo, newItem]);
+    setTodos((todos) => [...todos, newItem]);
+    setopenLists(true);
   };
-  console.log(todo);
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -47,6 +48,7 @@ const App = () => {
       )}
 
       {open && <TodoTab title={title} addnewItems={addnewItems} />}
+      {openLists && <TodoLists todos={todos} />}
     </div>
   );
 };

@@ -15,7 +15,6 @@ const TodoTab = ({ title, addnewItems }) => {
       completed: false,
     };
     addnewItems(newItem);
-    console.log(newItem);
   };
 
   return (
