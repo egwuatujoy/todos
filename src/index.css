@@ -73,7 +73,7 @@ button {
 .input-data {
   padding-top: 20px;
   margin: 50px;
-  background-color: rgb(201, 197, 197);
+  background-color: rgb(214, 213, 213);
   text-align: center;
   border: 5px solid white;
   border-radius: 20px;
@@ -85,7 +85,7 @@ button {
 }
 
 label {
-  color: rgba(161, 161, 218, 0.964);
+  color: blue;
   font-weight: 600;
   font-size: 20px;
 }
