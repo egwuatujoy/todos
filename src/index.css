@@ -28,3 +28,26 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
+
+.btn {
+  background-color: #fff;
+  color: #343a40;
+  padding: 50px 100px;
+  margin: 20px;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.plus-icon {
+  font-size: 40px;
+  color: #a8a6a6;
+
+}
+
+.todo-lists {
+  background-color: rgb(140, 138, 138);
+}
