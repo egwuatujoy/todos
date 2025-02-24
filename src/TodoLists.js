@@ -1,11 +1,11 @@
 import React from "react";
-import Todos from "./Todos";
 
-const TodoLists = ({ datas }) => {
+import TodoTab from "./TodoTab";
+const TodoLists = ({ todos, title }) => {
   return (
     <div className="todo-lists">
-      {datas.map((data) => (
-        <Todos data={data} key={data.id} />
+      {todos.map((todo) => (
+        <TodoTab todo={todo} key={todo.id} todotitle={title} />
       ))}
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 
-const AddToDoBtn = ({ handleOpen }) => {
+const AddToDoBtn = ({ handleSelected }) => {
   return (
-    <button className="btn" onClick={handleOpen}>
+    <button className="btn" onClick={handleSelected}>
       <span className="plus-icon">+</span>
     </button>
   );

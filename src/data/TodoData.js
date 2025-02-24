@@ -8,14 +8,14 @@ const todoLists = [
       { id: 3, description: "Bread", completed: false },
     ],
   },
-  {
-    id: 2,
-    title: "Work Projects",
-    tasks: [
-      { id: 1, description: "Finish report", completed: true },
-      { id: 2, description: "Prepare presentation", completed: false },
-    ],
-  },
+  // {
+  //   id: 2,
+  //   title: "Work Projects",
+  //   tasks: [
+  //     { id: 1, description: "Finish report", completed: true },
+  //     { id: 2, description: "Prepare presentation", completed: false },
+  //   ],
+  // },
   // {
   //   id: 3,
   //   title: "Household Chores",

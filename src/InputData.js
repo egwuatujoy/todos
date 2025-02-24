@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-
-const InputData = () => {
-  const [val, setVal] = useState(" ");
+const InputData = ({ handletitleBtn, title , handleTitle}) => {
   return (
-    <div>
-      <input type="text" value={val} onChange={(e) => setVal(e.target.value)} />
+    <div className="input-data">
+      <label>PLEASE INPUT A TITLE</label>
+      <input type="text" value={title} onChange={handleTitle} />
+      <button onClick={handletitleBtn}> Done</button>
     </div>
   );
 };

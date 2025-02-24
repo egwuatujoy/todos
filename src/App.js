@@ -2,26 +2,51 @@ import React, { useState } from "react";
 import Nav from "./Nav";
 import AddToDoBtn from "./AddToDoBtn";
 import TodoLists from "./TodoLists";
+import InputData from "./InputData";
+import TodoTab from "./TodoTab";
 
 // the data
 import todoLists from "./data/TodoData";
-import InputData from "./InputData";
-console.log(todoLists);
 // the data
 
 const App = () => {
+  const [title, setTitle] = useState("");
   const [open, setOpen] = useState(false);
-  const [data, setDatas] = useState(todoLists);
+  const [todo, setTodo] = useState([]);
+  const [selected, setSelected] = useState(false);
 
-  const handleOpen = () => {
+  const addnewItems = (newItem) => {
+    setTodo((todo) => [...todo, newItem]);
+  };
+  console.log(todo);
+
+  const handleTitle = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handletitleBtn = () => {
+    setSelected(!selected);
     setOpen(!open);
   };
+
+  const handleSelected = () => {
+    setSelected(!selected);
+  };
+
   return (
     <div>
       <Nav />
-      <AddToDoBtn handleOpen={handleOpen} />
-      <InputData />
-      {open && <TodoLists datas={data} />}
+      <AddToDoBtn handleSelected={handleSelected} />
+
+      {selected && (
+        <InputData
+          handleTitle={handleTitle}
+          title={title}
+          handletitleBtn={handletitleBtn}
+        />
+      )}
+
+      {open && <TodoTab title={title} addnewItems={addnewItems} />}
     </div>
   );
 };

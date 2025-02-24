@@ -8,6 +8,7 @@ body {
   font-family: "Poppins", serif;
   color: white;
   background-color: #f5f4f4;
+  height: 100vh;
 }
 
 .nav {
@@ -32,7 +33,7 @@ button {
 .btn {
   background-color: #fff;
   color: #343a40;
-  padding: 50px 100px;
+  padding: 20px 50px;
   margin: 20px;
   border: none;
   border-radius: 7px;
@@ -45,9 +46,82 @@ button {
 .plus-icon {
   font-size: 40px;
   color: #a8a6a6;
-
 }
 
-.todo-lists {
-  background-color: rgb(140, 138, 138);
+.tab {
+  background-color: blue;
+  font-size: 10px;
+  font-style: italic;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.tab button {
+  padding: 10px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-data {
+  padding-top: 20px;
+  margin: 50px;
+  background-color: rgb(201, 197, 197);
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.input-data button{
+  margin-top: 10px;
+}
+
+label {
+  color: rgba(161, 161, 218, 0.964);
+  font-weight: 600;
+  font-size: 20px;
+}
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: 0.3s;
+  color: rgba(161, 161, 218, 0.964);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid white;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 2px solid black;
+  appearance: none;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "\2713"; /* Unicode checkmark */
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
