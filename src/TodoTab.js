@@ -10,14 +10,16 @@ const TodoTab = ({ title, addnewItems }) => {
       alert("please input an item");
       return;
     }
-    const newItem = {
+
+    const newTask = {
       id: Date.now(),
-      title,
-      item,
-      quantity,
+      description: item,
       completed: false,
+      quantity,
     };
-    addnewItems(newItem);
+
+    // Pass only the new task, instead of a whole new object
+    addnewItems({ title, tasks: [newTask] });
     setQuantity(1);
     setItem("");
   };
@@ -31,7 +33,6 @@ const TodoTab = ({ title, addnewItems }) => {
           value={item}
           onChange={(e) => setItem(e.target.value)}
         />
-
         <select
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}

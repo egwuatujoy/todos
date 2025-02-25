@@ -140,15 +140,16 @@ input:focus {
   font-style: italic;
 }
 
-.todos button {
+/* .todos button {
   background: none;
-}
+} */
 
 .main-lists {
   display: flex;
-  justify-content: center;
+  justify-content:nd;
   align-items: center;
   gap: 5px;
+  line-height: 30px;
 }
 
 .check-box {

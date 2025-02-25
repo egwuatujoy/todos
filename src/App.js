@@ -17,8 +17,24 @@ const App = () => {
   const [openLists, setopenLists] = useState(true);
 
   const addnewItems = (newItem) => {
-    setTodos((todos) => [...todos, newItem]);
-  };
+    setTodos((todos) => {
+      const existingTodo = todos.find((todo) => todo.title === newItem.title);
+
+      if (existingTodo) {
+        // Update the tasks array of the existing todo
+        return todos.map((todo) =>
+          todo.title === newItem.title
+            ? { ...todo, tasks: [...todo.tasks, ...newItem.tasks] }
+            : todo
+        );
+      } else {
+        // If it doesn't exist, add a new todo
+        return [...todos, newItem];
+      }
+    });
+  }; // <-- Ensure this function is properly closed
+
+  console.log(todos);
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -51,6 +67,7 @@ const App = () => {
     );
   };
 
+  console.log(todos);
   return (
     <div>
       <Nav />
