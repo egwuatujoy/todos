@@ -9,11 +9,15 @@ const Todos = ({ todo, handledeletedItem, isCompleted }) => {
           className="check-box"
           onChange={() => isCompleted(todo.id)}
         />
-        <div className="main-lists">
+        <div
+          className="main-lists"
+          style={{
+            textDecoration: todo.completed ? "line-through" : "none",
+          }}
+        >
           <h5>{todo.quantity}</h5>
           <h5>{todo.item}</h5>
         </div>
-
         <button onClick={() => handledeletedItem(todo.id)}>🗑️</button>
       </div>
     </div>
