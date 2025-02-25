@@ -1,11 +1,14 @@
 import React from "react";
 
-const Todos = ({ todo, handledeletedItem }) => {
+const Todos = ({ todo, handledeletedItem, isCompleted }) => {
   return (
     <div className="todos">
       <div className="todo">
-        <input type="checkbox" />
-
+        <input
+          type="checkbox"
+          className="check-box"
+          onChange={() => isCompleted(todo.id)}
+        />
         <div className="main-lists">
           <h5>{todo.quantity}</h5>
           <h5>{todo.item}</h5>

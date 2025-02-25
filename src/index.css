@@ -29,6 +29,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn {
@@ -51,21 +52,21 @@ button {
 
 .tab {
   background-color: blue;
-
   border-radius: 10px;
   padding: 20px;
-  margin: 20px;
+  margin: 15px;
 }
 
 .tab h1 {
   font-size: 15px;
+  text-align: center;
   font-style: italic;
   margin-bottom: 10px;
   text-transform: uppercase;
-  
 }
 .tab button {
-  padding: 10px;
+  padding:  8px 14px;  
+  font-size: 11px;
 }
 
 .inputs {
@@ -83,17 +84,21 @@ button {
   border: 5px solid white;
   border-radius: 20px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
-.input-data button {
-  margin-top: 10px;
-}
+
 
 label {
   color: blue;
   font-weight: 600;
   font-size: 20px;
 }
+
 input,
 select {
   font-family: inherit;
@@ -110,22 +115,6 @@ input:focus {
   border: 1px solid white;
 }
 
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  border: 2px solid black;
-  appearance: none;
-}
-
-input[type="checkbox"]:checked::before {
-  content: "\2713"; /* Unicode checkmark */
-  display: block;
-  text-align: center;
-  color: white;
-  font-size: 14px;
-}
-
 .inputs {
   display: flex;
   justify-content: center;
@@ -135,12 +124,13 @@ input[type="checkbox"]:checked::before {
 .todo-lists {
   background-color: blue;
   padding: 20px;
-  margin: 20px;
+  margin: 25px;
 }
 
 .todo {
   display: flex;
   justify-content: left;
+  text-align: left;
   align-items: center;
   gap: 10px;
 }
@@ -148,7 +138,6 @@ input[type="checkbox"]:checked::before {
 .todo-lists h1 {
   font-size: 20px;
   font-style: italic;
-
 }
 
 .todos button {
@@ -160,4 +149,23 @@ input[type="checkbox"]:checked::before {
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+
+.check-box {
+  background-color: none;
+  border: 2px solid black;
+  padding: 50px;
+}
+
+.save-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.save-btn button {
+  padding:  8px 14px;
 }

@@ -43,6 +43,14 @@ const App = () => {
     setTodos((todos) => todos.filter((todo) => id !== todo.id));
   };
 
+  const isCompleted = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        id === todo.id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <div>
       <Nav />
@@ -59,7 +67,11 @@ const App = () => {
       {open && <TodoTab title={title} addnewItems={addnewItems} />}
 
       {todos.length > 0 && (
-        <TodoLists todos={todos} handledeletedItem={handledeletedItem} />
+        <TodoLists
+          todos={todos}
+          handledeletedItem={handledeletedItem}
+          isCompleted={isCompleted}
+        />
       )}
     </div>
   );
