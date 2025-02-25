@@ -18,7 +18,6 @@ const TodoTab = ({ title, addnewItems }) => {
       quantity,
     };
 
-    // Pass only the new task, instead of a whole new object
     addnewItems({ title, tasks: [newTask] });
     setQuantity(1);
     setItem("");

@@ -6,7 +6,7 @@ import InputData from "./InputData";
 import TodoTab from "./TodoTab";
 
 // the data
-import todoLists from "./data/TodoData";
+// import todoLists from "./data/TodoData";
 // the data
 
 const App = () => {
@@ -18,23 +18,29 @@ const App = () => {
 
   const addnewItems = (newItem) => {
     setTodos((todos) => {
-      const existingTodo = todos.find((todo) => todo.title === newItem.title);
-
-      if (existingTodo) {
-        // Update the tasks array of the existing todo
+      const checkTitle = todos.find((todo) => todo.title === newItem.title);
+      if (checkTitle) {
         return todos.map((todo) =>
           todo.title === newItem.title
             ? { ...todo, tasks: [...todo.tasks, ...newItem.tasks] }
             : todo
         );
       } else {
-        // If it doesn't exist, add a new todo
         return [...todos, newItem];
       }
     });
-  }; // <-- Ensure this function is properly closed
+  };
 
-  console.log(todos);
+  const isCompleted = (id) => {
+    setTodos((todos) =>
+      todos.map((todo) => ({
+        ...todo,
+        tasks: todo.tasks.map((t) =>
+          t.id === id ? { ...t, completed: !t.completed } : t
+        ),
+      }))
+    );
+  };
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -57,14 +63,6 @@ const App = () => {
 
   const handledeletedItem = (id) => {
     setTodos((todos) => todos.filter((todo) => id !== todo.id));
-  };
-
-  const isCompleted = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        id === todo.id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
   };
 
   console.log(todos);

@@ -23,7 +23,7 @@ body {
 button {
   background-color: #fff;
   color: #343a40;
-  padding: 0.8rem 1.2rem;
+  /* padding: 0.8rem 1.2rem; */
   border: none;
   border-radius: 7px;
   font-weight: bold;
@@ -65,7 +65,7 @@ button {
   text-transform: uppercase;
 }
 .tab button {
-  padding:  8px 14px;  
+  padding: 8px 14px;
   font-size: 11px;
 }
 
@@ -90,8 +90,6 @@ button {
   justify-content: center;
   align-items: center;
 }
-
-
 
 label {
   color: blue;
@@ -140,16 +138,22 @@ input:focus {
   font-style: italic;
 }
 
-/* .todos button {
-  background: none;
-} */
-
 .main-lists {
   display: flex;
-  justify-content:nd;
+  justify-content: start;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   line-height: 30px;
+}
+.main-lists button {
+  background: none;
+}
+
+.lists {
+  display: flex;
+  justify-content: start;
+  /* align-items: center; */
+  gap: 5px;
 }
 
 .check-box {
@@ -168,5 +172,5 @@ input:focus {
 }
 
 .save-btn button {
-  padding:  8px 14px;
+  padding: 8px 14px;
 }
