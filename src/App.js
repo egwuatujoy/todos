@@ -26,12 +26,21 @@ const App = () => {
   };
 
   const handletitleBtn = () => {
-    setSelected(!selected);
-    setOpen(!open);
+    if (title === "") {
+      setSelected(true);
+      alert("please input a title");
+    } else {
+      setSelected(!selected);
+      setOpen(!open);
+    }
   };
 
   const handleSelected = () => {
     setSelected(!selected);
+  };
+
+  const handledeletedItem = (id) => {
+    setTodos((todos) => todos.filter((todo) => id !== todo.id));
   };
 
   return (
@@ -48,7 +57,10 @@ const App = () => {
       )}
 
       {open && <TodoTab title={title} addnewItems={addnewItems} />}
-      {openLists && <TodoLists todos={todos} />}
+
+      {todos.length > 0 && (
+        <TodoLists todos={todos} handledeletedItem={handledeletedItem} />
+      )}
     </div>
   );
 };

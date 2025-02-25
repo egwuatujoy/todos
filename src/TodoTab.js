@@ -4,7 +4,6 @@ const TodoTab = ({ title, addnewItems }) => {
   const [quantity, setQuantity] = useState(1);
   const [item, setItem] = useState("");
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const newItem = {
@@ -19,7 +18,7 @@ const TodoTab = ({ title, addnewItems }) => {
 
   return (
     <form className="tab" onSubmit={handleSubmit}>
-      <h1>{title}</h1>
+      <h1>Create your list for {title}</h1>
       <div className="inputs">
         <input
           type="text"
