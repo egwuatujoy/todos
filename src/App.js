@@ -14,11 +14,10 @@ const App = () => {
   const [open, setOpen] = useState(false);
   const [todos, setTodos] = useState([]);
   const [selected, setSelected] = useState(false);
-  const [openLists, setopenLists] = useState(false);
+  const [openLists, setopenLists] = useState(true);
 
   const addnewItems = (newItem) => {
     setTodos((todos) => [...todos, newItem]);
-    setopenLists(true);
   };
 
   const handleTitle = (e) => {
@@ -30,8 +29,9 @@ const App = () => {
       setSelected(true);
       alert("please input a title");
     } else {
-      setSelected(!selected);
+      setSelected(false);
       setOpen(!open);
+      setopenLists(false);
     }
   };
 
@@ -46,7 +46,7 @@ const App = () => {
   return (
     <div>
       <Nav />
-      <AddToDoBtn handleSelected={handleSelected} />
+      {openLists && <AddToDoBtn handleSelected={handleSelected} />}
 
       {selected && (
         <InputData

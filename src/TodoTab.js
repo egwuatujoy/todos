@@ -6,6 +6,10 @@ const TodoTab = ({ title, addnewItems }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!item) {
+      alert("please input an item");
+      return;
+    }
     const newItem = {
       id: Date.now(),
       title,
@@ -14,6 +18,8 @@ const TodoTab = ({ title, addnewItems }) => {
       completed: false,
     };
     addnewItems(newItem);
+    setQuantity(1);
+    setItem("");
   };
 
   return (

@@ -5,7 +5,12 @@ const Todos = ({ todo, handledeletedItem }) => {
     <div className="todos">
       <div className="todo">
         <input type="checkbox" />
-        <h5>{todo.item}</h5>
+
+        <div className="main-lists">
+          <h5>{todo.quantity}</h5>
+          <h5>{todo.item}</h5>
+        </div>
+
         <button onClick={() => handledeletedItem(todo.id)}>🗑️</button>
       </div>
     </div>
