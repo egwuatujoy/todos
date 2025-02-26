@@ -20,10 +20,14 @@ body {
   padding: 10px;
 }
 
+.nav button {
+  padding: 0.5rem 0.6rem;
+}
+
 button {
   background-color: #fff;
   color: #343a40;
-  /* padding: 0.8rem 1.2rem; */
+
   border: none;
   border-radius: 7px;
   font-weight: bold;
@@ -65,7 +69,7 @@ button {
   text-transform: uppercase;
 }
 .tab button {
-  padding: 8px 14px;
+  padding: 10px;
   font-size: 11px;
 }
 
@@ -90,7 +94,9 @@ button {
   justify-content: center;
   align-items: center;
 }
-
+.input-data button {
+  padding: 0.5rem 0.6rem;
+}
 label {
   color: blue;
   font-weight: 600;
@@ -125,14 +131,6 @@ input:focus {
   margin: 25px;
 }
 
-.todo {
-  display: flex;
-  justify-content: left;
-  text-align: left;
-  align-items: center;
-  gap: 10px;
-}
-
 .todo-lists h1 {
   font-size: 20px;
   font-style: italic;
@@ -141,7 +139,6 @@ input:focus {
 .main-lists {
   display: flex;
   justify-content: start;
-  align-items: center;
   gap: 8px;
   line-height: 30px;
 }
@@ -152,14 +149,8 @@ input:focus {
 .lists {
   display: flex;
   justify-content: start;
-  /* align-items: center; */
+  align-items: center;
   gap: 5px;
-}
-
-.check-box {
-  background-color: none;
-  border: 2px solid black;
-  padding: 50px;
 }
 
 .save-btn {

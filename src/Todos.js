@@ -2,7 +2,7 @@ import React from "react";
 
 const Todos = ({ todo, handledeletedItem, isCompleted }) => {
   return (
-    <div className="todos">
+    <>
       {todo.tasks.map((to) => (
         <div className="main-lists">
           <input
@@ -15,7 +15,7 @@ const Todos = ({ todo, handledeletedItem, isCompleted }) => {
             style={{
               textDecoration: to.completed ? "line-through" : "none",
             }}
-            className="main-lists"
+            className="lists"
           >
             <h5>{to.quantity}</h5>
             <h5>{to.description}</h5>
@@ -24,7 +24,7 @@ const Todos = ({ todo, handledeletedItem, isCompleted }) => {
           <button onClick={() => handledeletedItem(to.id)}>🗑️</button>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

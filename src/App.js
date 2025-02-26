@@ -33,9 +33,9 @@ const App = () => {
 
   const isCompleted = (id) => {
     setTodos((todos) =>
-      todos.map((todo) => ({
-        ...todo,
-        tasks: todo.tasks.map((t) =>
+      todos.map((to) => ({
+        ...to,
+        tasks: to.tasks.map((t) =>
           t.id === id ? { ...t, completed: !t.completed } : t
         ),
       }))
@@ -62,7 +62,12 @@ const App = () => {
   };
 
   const handledeletedItem = (id) => {
-    setTodos((todos) => todos.filter((todo) => id !== todo.id));
+    setTodos((todos) =>
+      todos.map((todo) => ({
+        ...todo,
+        tasks: todo.tasks.filter((to) => to.id !== id),
+      }))
+    );
   };
 
   console.log(todos);
